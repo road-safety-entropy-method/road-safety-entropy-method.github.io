@@ -40,14 +40,11 @@ const menuItems: MenuProps['items'] = [
 
 export const MainLayout: React.FC = () => {
     const layoutStyle: CSSProperties = {
-        height: '100%',
+        flex: '1 0 0',
         display: 'flex',
         flexDirection: 'column',
+        minHeight: '100vh'
     };
-
-    const wrapperStyle: CSSProperties = {
-        flex: '1 0 auto'
-    }
 
     const headerStyle: CSSProperties = {
         backgroundColor: 'white',
@@ -57,7 +54,7 @@ export const MainLayout: React.FC = () => {
     };
 
     const contentStyle: CSSProperties = {
-        margin: '24px 16px 0',
+        margin: '24px 40px 0',
     }
 
     const footerStyle: CSSProperties = { textAlign: 'center',
@@ -66,7 +63,6 @@ export const MainLayout: React.FC = () => {
 
     return (
         <Layout style={layoutStyle}>
-            <div style={wrapperStyle}>
             <Header style={headerStyle}>
                 <Link to={'/'}>
                     <Typography.Title level={5} style={{marginBottom: 0}}>Методика оценки степени организованности систем обеспечения БДД</Typography.Title>
@@ -83,7 +79,6 @@ export const MainLayout: React.FC = () => {
             <Content style={contentStyle}>
                 <Outlet/>
             </Content>
-            </div>
             <Footer style={footerStyle}>
                 тут будет какой-нибудь прикольный футер с ссылкой на гитхаб например
             </Footer>
