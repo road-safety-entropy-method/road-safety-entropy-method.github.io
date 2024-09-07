@@ -2,6 +2,8 @@ import {Card, Space, Typography} from "antd";
 import {MathJax, MathJaxContext} from "better-react-mathjax";
 import {Header} from "@/pages/method/header.tsx";
 import {methodDivStyle, methodPCenterStyle, methodPStyle} from "@/pages/method/styles.ts";
+import { EntropyTable } from "./entropy-table";
+import {WeightsTableCity} from "@/pages/method/weights-table-city.tsx";
 
 export const MethodCity = () => {
     return (
@@ -155,7 +157,19 @@ export const MethodCity = () => {
                         Определение, в рамках Классификации уровня организованности систем ОБДД по величине Относительной энтропии <MathJax inline>{"`H_3`"}</MathJax> БДД процесса обеспечения БДД.
                     </Header>
                     <div style={methodDivStyle}>
-                        <p style={methodPStyle}>ТУТ НАДО НАРИСОВАТЬ ТАБЛИЦУ</p>
+                        <p style={methodPStyle}>
+                            Энтропийная классификация систем обеспечения БДД городов-региональных центров РФ по уровням системной организованности (2021). Система оценок <MathJax inline>{"`H_3`"}</MathJax>
+                        </p>
+                        <EntropyTable data={{
+                            highest: '< 0,580',
+                            highOne: '0,581…0,600',
+                            highTwo: '0,601…0,620',
+                            mediumOne: '0,621…0,640',
+                            mediumTwo: '0,641…0,660',
+                            lowOne: '0,661…0,680',
+                            lowTwo: '0,681…0,700',
+                            lowest: '> 0.701'
+                        }}/>
                     </div>
                 </Card>
                 <Card>
@@ -168,7 +182,10 @@ export const MethodCity = () => {
                             расчетных значений соответствующих «весов» <MathJax inline>{"`w_i`"}</MathJax> звеньев
                             причинно-следственной цепочки с общероссийскими значениями <MathJax inline>{"`w_i`"}</MathJax>.
                         </p>
-                        <p style={methodPStyle}>ТУТ НАДО НАРИСОВАТЬ ТАБЛИЦУ</p>
+                        <p style={methodPStyle}>
+                            Базовые, принятые за стандарт значения «весов» <MathJax inline>{"`w_i`"}</MathJax> звеньев причинно-следственной цепочки (2021) для городов РФ. Система оценок <MathJax inline>{"`H_3`"}</MathJax>
+                        </p>
+                        <WeightsTableCity/>
                     </div>
                 </Card>
             </Space>

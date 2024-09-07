@@ -2,6 +2,8 @@ import {Card, Space, Typography} from "antd";
 import {MathJax, MathJaxContext} from "better-react-mathjax";
 import {Header} from "@/pages/method/header.tsx";
 import {methodDivStyle, methodPCenterStyle, methodPStyle} from "@/pages/method/styles.ts";
+import {EntropyTable} from "@/pages/method/entropy-table.tsx";
+import {WeightsTableRegion} from "@/pages/method/weights-table-region.tsx";
 
 export const MethodRegion = () => {
   return (
@@ -159,7 +161,19 @@ export const MethodRegion = () => {
                 Определение, в рамках Классификации уровня организованности систем ОБДД по величине Относительной энтропии <MathJax inline>{"`H_4`"}</MathJax> БДД процесса обеспечения БДД.
             </Header>
             <div style={methodDivStyle}>
-                <p style={methodPStyle}>ТУТ НАДО НАРИСОВАТЬ ТАБЛИЦУ</p>
+                <p style={methodPStyle}>
+                    Энтропийная классификация региональных систем обеспечения БДД по уровням системной организованности (2021). Система оценок  <MathJax inline>{"`H_4`"}</MathJax>
+                </p>
+                <EntropyTable data={{
+                    highest: '< 0,650',
+                    highOne: '0,651…0,675',
+                    highTwo: '0,676…0,700',
+                    mediumOne: '0,701…0,725',
+                    mediumTwo: '0,726…0,750',
+                    lowOne: '0,751…0,775',
+                    lowTwo: '0,776…0,800',
+                    lowest: '> 0.801'
+                }}/>
             </div>
         </Card>
         <Card>
@@ -172,7 +186,10 @@ export const MethodRegion = () => {
                     расчетных значений соответствующих «весов» <MathJax inline>{"`w_i`"}</MathJax> звеньев
                     причинно-следственной цепочки с общероссийскими значениями <MathJax inline>{"`w_i`"}</MathJax>.
                 </p>
-                <p style={methodPStyle}>ТУТ НАДО НАРИСОВАТЬ ТАБЛИЦУ</p>
+                <p style={methodPStyle}>
+                    Базовые, принятые за стандарт значения «весов» <MathJax inline>{"`w_i`"}</MathJax> звеньев причинно-следственной цепочки (2021) для регионов РФ. Система оценок <MathJax inline>{"`H_4`"}</MathJax>
+                </p>
+               <WeightsTableRegion/>
             </div>
         </Card>
     </Space>
