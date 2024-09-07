@@ -5,9 +5,10 @@ import {createHashRouter, RouterProvider} from "react-router-dom";
 import {MainLayout} from "./layout.tsx";
 
 import {AboutAuthor} from "@/pages/about-author/about-author.tsx";
-import {Calculator} from "@/pages/calculator/calculator.tsx";
 import {Main} from "@/pages/main/main.tsx";
 import {Method} from "@/pages/method/method.tsx";
+import {CalculatorRegion} from "@/pages/calculator/calculator-region.tsx";
+import {CalculatorCity} from "@/pages/calculator/calculator-city.tsx";
 
 
 const hashRouter = createHashRouter([
@@ -20,16 +21,12 @@ const hashRouter = createHashRouter([
                 element: <Main/>
             },
             {
-                path: 'calculator',
-                element: <Calculator/>
-            },
-            {
                 path: 'calculator-region',
-                element: <Calculator/>
+                element: <CalculatorRegion/>
             },
             {
                 path: 'calculator-city',
-                element: <Calculator/>
+                element: <CalculatorCity/>
             },
             {
                 path: 'method',

@@ -32,6 +32,7 @@ export const calculate = (values: TForm): TCalculations => {
         const relativeEntropy = entropy / Math.log(4);
 
         return {
+            systemType,
             wVehicles: roundValue(wVehicles),
             wAccidents: roundValue(wAccidents),
             wInjured: roundValue(wInjured),
@@ -63,6 +64,8 @@ export const calculate = (values: TForm): TCalculations => {
         const relativeEntropy = entropy / Math.log(3);
 
         return {
+            systemType,
+            wVehicles: undefined,
             wAccidents: roundValue(wAccidents),
             wInjured: roundValue(wInjured),
             wDeaths: roundValue(wDeaths),
