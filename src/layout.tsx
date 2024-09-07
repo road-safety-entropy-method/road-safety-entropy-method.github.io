@@ -1,5 +1,7 @@
 import React, {CSSProperties} from 'react';
-import {BookOutlined, CalculatorOutlined, UserOutlined} from '@ant-design/icons';
+import {BookOutlined, CalculatorOutlined,
+    // UserOutlined
+} from '@ant-design/icons';
 import {MenuProps, Typography} from 'antd';
 import { Layout, Menu } from 'antd';
 import {Link, Outlet} from 'react-router-dom';
@@ -27,15 +29,25 @@ const menuItems: MenuProps['items'] = [
             <Link to={'/method'}>Методика</Link>
         ),
         icon: <BookOutlined/>,
-        key: 'method'
+        key: 'method',
+        children: [
+            {
+                label: <Link to={'/method-region'}>Для региона</Link>,
+                key: 'calculator-region'
+            },
+            {
+                label: <Link to={'/method-city'}>Для города</Link>,
+                key: 'calculator-city'
+            },
+        ]
     },
-    {
-        label:(
-            <Link to={'/about-author'}>Об авторе</Link>
-        ),
-        icon: <UserOutlined/>,
-        key: 'about-author'
-    },
+    // {
+    //     label:(
+    //         <Link to={'/about-author'}>Об авторе</Link>
+    //     ),
+    //     icon: <UserOutlined/>,
+    //     key: 'about-author'
+    // },
 ]
 
 export const MainLayout: React.FC = () => {

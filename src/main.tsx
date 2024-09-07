@@ -6,9 +6,10 @@ import {MainLayout} from "./layout.tsx";
 
 import {AboutAuthor} from "@/pages/about-author/about-author.tsx";
 import {Main} from "@/pages/main/main.tsx";
-import {Method} from "@/pages/method/method.tsx";
 import {CalculatorRegion} from "@/pages/calculator/calculator-region.tsx";
 import {CalculatorCity} from "@/pages/calculator/calculator-city.tsx";
+import {MethodRegion} from "@/pages/method/method-region.tsx";
+import { MethodCity } from './pages/method/method-city.tsx';
 
 
 const hashRouter = createHashRouter([
@@ -29,8 +30,12 @@ const hashRouter = createHashRouter([
                 element: <CalculatorCity/>
             },
             {
-                path: 'method',
-                element: <Method/>
+                path: 'method-region',
+                element: <MethodRegion/>
+            },
+            {
+                path: 'method-city',
+                element: <MethodCity/>
             },
             {
                 path: 'about-author',
