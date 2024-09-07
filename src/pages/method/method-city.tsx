@@ -4,8 +4,13 @@ import {Header} from "@/pages/method/header.tsx";
 import {methodDivStyle, methodPCenterStyle, methodPStyle} from "@/pages/method/styles.ts";
 import { EntropyTable } from "./entropy-table";
 import {WeightsTableCity} from "@/pages/method/weights-table-city.tsx";
+import {ScrollToElement} from "@/pages/method/scroll-to-element.tsx";
+import {useLocation} from "react-router-dom";
 
 export const MethodCity = () => {
+    const location = useLocation();
+    const { scrollTo } = location.state || {};
+
     return (
         <MathJaxContext config={{loader: { load: ["input/asciimath"] }}}>
             <Typography.Title level={1}>
@@ -152,7 +157,7 @@ export const MethodCity = () => {
                         </p>
                     </div>
                 </Card>
-                <Card>
+                <Card id={'entropy-table'}>
                     <Header tag={'Этап 8'}>
                         Определение, в рамках Классификации уровня организованности систем ОБДД по величине Относительной энтропии <MathJax inline>{"`H_3`"}</MathJax> БДД процесса обеспечения БДД.
                     </Header>
@@ -189,6 +194,7 @@ export const MethodCity = () => {
                     </div>
                 </Card>
             </Space>
+            {scrollTo && <ScrollToElement elementId={scrollTo} />}
         </MathJaxContext>
     );
 };

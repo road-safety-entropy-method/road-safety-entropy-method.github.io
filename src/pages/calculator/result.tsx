@@ -8,6 +8,7 @@ import {
     russia2021Calculations
 } from "@/pages/calculator/constants.ts";
 import {AlertProps} from "antd/es/alert/Alert";
+import { useNavigate } from "react-router-dom";
 
 const calculationKeyToSymbol: Record<TCalculationKey, ReactNode> = {
     wVehicles: <>w<sub>N</sub></>,
@@ -101,6 +102,12 @@ type TEntropyResultProps = {
 }
 
 export const EntropyResult = ({ systemType, value }: TEntropyResultProps) => {
+    const navigate = useNavigate();
+
+    const goToMethodPageAndScroll = () => {
+        navigate(systemType === 'region' ? '/method-region' : '/method-city', { state: { scrollTo: 'entropy-table' } });
+    };
+
     const classes = systemType === 'region' ? regionEntropyValueToClass : cityEntropyValueToClass;
     const cls = classes.find((cls) => value >= cls.minValue && value < cls.maxValue);
 
@@ -109,7 +116,7 @@ export const EntropyResult = ({ systemType, value }: TEntropyResultProps) => {
           statisticTitle={'Относительная энтропия'}
           statisticValue={value.toString()}
           alertType={cls?.alertType}
-          description={<><b>{cls?.desc}</b> уровень организованности - класс {cls?.subClass || cls?.class}</>}
+          description={<><b>{cls?.desc}</b> уровень организованности - класс {cls?.subClass || cls?.class}.<br/><a onClick={() => goToMethodPageAndScroll()}>Подробнее об уровнях организованности</a></>}
       />
   )
 };
