@@ -17,81 +17,6 @@ import {tyumenCityDemoValues, tyumenRegionDemoValues} from "@/pages/calculator/c
 
 const requiredRule: FormRule = {required: true, message: 'Заполните поле'};
 
-// interface DataType {
-//     key: string;
-//     wVehicles: number | undefined;
-//     wAccidents: number;
-//     wInjured: number;
-//     wDeaths: number;
-//     entropy: number;
-//     relativeEntropy: number;
-// }
-
-// const getTableData = (systemType: 'region' | 'city', calculations: TCalculations | null): Array<DataType> | undefined => {
-//     if (!calculations) {
-//         return void 0;
-//     }
-//     const standardCalculations = systemType === 'region' ? russia2021Calculations : moscow2021Calculations;
-//     return [
-//         {
-//             key: 'Расчёты на основе введенных данных',
-//             wVehicles: calculations.wVehicles,
-//             wAccidents: calculations.wAccidents,
-//             wInjured: calculations.wInjured,
-//             wDeaths: calculations.wDeaths,
-//             entropy: calculations.entropy,
-//             relativeEntropy: calculations.relativeEntropy,
-//         },
-//         {
-//             key: 'Расчёты',
-//             wVehicles: standardCalculations.wVehicles,
-//             wAccidents: standardCalculations.wAccidents,
-//             wInjured: standardCalculations.wInjured,
-//             wDeaths: standardCalculations.wDeaths,
-//             entropy: standardCalculations.entropy,
-//             relativeEntropy: standardCalculations.relativeEntropy,
-//         }
-//     ];
-// }
-//
-// const getColumns = (systemType: 'region' | 'city'): TableProps<DataType>['columns'] => {
-//     const columns: TableProps<DataType>['columns'] = [
-//         {
-//             title: '',
-//             dataIndex: 'key',
-//             rowScope: 'row',
-//         },
-//         {
-//             title: <i>w<sub>ra</sub></i>,
-//             dataIndex: 'wAccidents',
-//         },
-//         {
-//             title: <i>w<sub>v</sub></i>,
-//             dataIndex: 'wInjured',
-//         },
-//         {
-//             title: <i>w<sub>d</sub></i>,
-//             dataIndex: 'wDeaths',
-//         },
-//         {
-//             title: 'Энтропия',
-//             dataIndex: 'entropy',
-//         },
-//         {
-//             title: <>Относительная<br/>энтропия</>,
-//             dataIndex: 'relativeEntropy',
-//         }
-//     ]
-//     if (systemType === 'region') {
-//         columns.splice(1, 0,
-//             {
-//                 title: <i>w<sub>vh</sub></i>,
-//                 dataIndex: 'wVehicles',
-//             });
-//     }
-//     return columns;
-// }
-
 type TProps = {
     systemType: 'region' | 'city';
 }
@@ -104,9 +29,6 @@ export const Calculator = ({ systemType }: TProps) => {
     useEffect(() => {
         form.setFieldValue('systemType', systemType);
     }, [systemType]);
-
-  // const columns = getColumns(systemType);
-  // const tableData = getTableData(systemType, currentCalculations)
 
   const onFinish = (values: TForm) => {
       const calculations = calculate(values);
@@ -162,9 +84,6 @@ export const Calculator = ({ systemType }: TProps) => {
               </Card>
           </Col>
           <Col span={14}>
-              {/*{currentCalculations &&*/}
-              {/*    <Table columns={columns} dataSource={tableData} bordered pagination={false}/>*/}
-              {/*}*/}
               {currentCalculations &&
                   <>
                       <Typography.Title level={2} style={{marginBottom: '8px'}}>

@@ -1,7 +1,5 @@
 import React, {CSSProperties} from 'react';
-import {BookOutlined, CalculatorOutlined,
-    // UserOutlined
-} from '@ant-design/icons';
+import {BookOutlined, CalculatorOutlined, UserOutlined} from '@ant-design/icons';
 import {MenuProps, Typography} from 'antd';
 import { Layout, Menu } from 'antd';
 import {Link, Outlet} from 'react-router-dom';
@@ -25,29 +23,27 @@ const menuItems: MenuProps['items'] = [
         ]
     },
     {
-        label: (
-            <Link to={'/method'}>Методика</Link>
-        ),
+        label: 'Методика',
         icon: <BookOutlined/>,
         key: 'method',
         children: [
             {
                 label: <Link to={'/method-region'}>Для региона</Link>,
-                key: 'calculator-region'
+                key: 'method-region'
             },
             {
                 label: <Link to={'/method-city'}>Для города</Link>,
-                key: 'calculator-city'
+                key: 'method-city'
             },
         ]
     },
-    // {
-    //     label:(
-    //         <Link to={'/about-author'}>Об авторе</Link>
-    //     ),
-    //     icon: <UserOutlined/>,
-    //     key: 'about-author'
-    // },
+    {
+        label:(
+            <Link to={'/about-author'}>Об авторе</Link>
+        ),
+        icon: <UserOutlined/>,
+        key: 'about-author'
+    },
 ]
 
 export const MainLayout: React.FC = () => {
@@ -92,7 +88,7 @@ export const MainLayout: React.FC = () => {
                 <Outlet/>
             </Content>
             <Footer style={footerStyle}>
-                тут будет какой-нибудь прикольный футер с ссылкой на гитхаб например
+                тут можно добавить футер с контактными данными например. а можно его вообще убрать.
             </Footer>
         </Layout>
     )
