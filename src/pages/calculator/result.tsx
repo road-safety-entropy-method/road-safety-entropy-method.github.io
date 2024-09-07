@@ -53,7 +53,7 @@ export const Result = ({ systemType, calculationKey, calculatedValue }: TProps) 
 
     const stateType = useMemo(() => {
         // @ts-expect-error ---
-        if (Math.abs(calculatedValue - standardValue) < 0.03) return 'info';
+        if (Math.abs(calculatedValue - standardValue) < 0.003) return 'info';
 
         const whatsBest = calculationKeyToWhatsBest[calculationKey];
         // @ts-expect-error ---
@@ -109,7 +109,7 @@ export const EntropyResult = ({ systemType, value }: TEntropyResultProps) => {
           statisticTitle={'Относительная энтропия'}
           statisticValue={value.toString()}
           alertType={cls?.alertType}
-          description={`${cls?.desc} - класс ${cls?.subClass || cls?.class}`}
+          description={<><b>{cls?.desc}</b> уровень организованности - класс {cls?.subClass || cls?.class}</>}
       />
   )
 };

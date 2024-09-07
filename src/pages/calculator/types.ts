@@ -1,4 +1,5 @@
 import {AlertProps} from "antd/es/alert/Alert";
+import {ReactNode} from "react";
 
 export type TSystemType = 'region' | 'city';
 
@@ -48,6 +49,6 @@ export type TEntropyClass = {
     maxValue: number;
     class: string;
     subClass: string;
-    desc: string;
+    desc: ReactNode;
     alertType: AlertProps["type"];
 }

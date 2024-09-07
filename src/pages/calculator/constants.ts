@@ -2,20 +2,20 @@ import {TCalculations, TCityCalculations, TEntropyClass, TForm} from "@/pages/ca
 
 export const tyumenRegionDemoValues: TForm = {
     systemType: 'region',
-    population: 1,
-    vehicles: 1,
-    accidents: 1,
-    injured: 1,
-    deaths: 1
+    population: 1552148,
+    vehicles: 721286,
+    accidents: 2462,
+    injured: 3570,
+    deaths: 184
 }
 
 export const tyumenCityDemoValues: TForm = {
     systemType: 'city',
-    population: 1,
+    population: 847488,
     vehicles: undefined,
-    accidents: 1,
-    injured: 1,
-    deaths: 1
+    accidents: 1452,
+    injured: 2027,
+    deaths: 51
 }
 
 export const russia2021Calculations: TCalculations = {
@@ -44,7 +44,7 @@ export const regionEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.651,
         class: 'I',
         subClass: '',
-        desc: 'Очень высокий уровень организованности',
+        desc: 'Очень высокий',
         alertType: 'success'
     },
     {
@@ -52,7 +52,7 @@ export const regionEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.676,
         class: 'II',
         subClass: 'II-1',
-        desc: 'Высокий уровень организованности',
+        desc: 'Высокий',
         alertType: 'success'
     },
     {
@@ -60,7 +60,7 @@ export const regionEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.701,
         class: 'II',
         subClass: 'II-2',
-        desc: 'Высокий уровень организованности',
+        desc: 'Высокий',
         alertType: 'success'
     },
     {
@@ -68,7 +68,7 @@ export const regionEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.726,
         class: 'III',
         subClass: 'III-1',
-        desc: 'Средний уровень организованности',
+        desc: 'Средний',
         alertType: 'info'
     },
     {
@@ -76,7 +76,7 @@ export const regionEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.751,
         class: 'III',
         subClass: 'III-2',
-        desc: 'Средний уровень организованности',
+        desc: 'Средний',
         alertType: 'info'
     },
     {
@@ -84,7 +84,7 @@ export const regionEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.776,
         class: 'IV',
         subClass: 'IV-1',
-        desc: 'Низкий уровень организованности',
+        desc: 'Низкий',
         alertType: 'warning'
     },
     {
@@ -92,7 +92,7 @@ export const regionEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.801,
         class: 'IV',
         subClass: 'IV-2',
-        desc: 'Низкий уровень организованности',
+        desc: 'Низкий',
         alertType: 'warning'
     },
     {
@@ -100,7 +100,7 @@ export const regionEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: Infinity,
         class: 'V',
         subClass: '',
-        desc: 'Очень низкий уровень организованности',
+        desc: 'Очень низкий',
         alertType: 'warning'
     },
 ]
@@ -111,7 +111,7 @@ export const cityEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.581,
         class: 'I',
         subClass: '',
-        desc: 'Очень высокий уровень организованности',
+        desc: 'Очень высокий',
         alertType: 'success'
     },
     {
@@ -119,7 +119,7 @@ export const cityEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.601,
         class: 'II',
         subClass: 'II-1',
-        desc: 'Высокий уровень организованности',
+        desc: 'Высокий',
         alertType: 'success'
     },
     {
@@ -127,7 +127,7 @@ export const cityEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.621,
         class: 'II',
         subClass: 'II-2',
-        desc: 'Высокий уровень организованности',
+        desc: 'Высокий',
         alertType: 'success'
     },
     {
@@ -135,7 +135,7 @@ export const cityEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.641,
         class: 'III',
         subClass: 'III-1',
-        desc: 'Средний уровень организованности',
+        desc: 'Средний',
         alertType: 'info'
     },
     {
@@ -143,7 +143,7 @@ export const cityEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.661,
         class: 'III',
         subClass: 'III-2',
-        desc: 'Средний уровень организованности',
+        desc: 'Средний',
         alertType: 'info'
     },
     {
@@ -151,7 +151,7 @@ export const cityEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.681,
         class: 'IV',
         subClass: 'IV-1',
-        desc: 'Низкий уровень организованности',
+        desc: 'Низкий',
         alertType: 'warning'
     },
     {
@@ -159,7 +159,7 @@ export const cityEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: 0.701,
         class: 'IV',
         subClass: 'IV-2',
-        desc: 'Низкий уровень организованности',
+        desc: 'Низкий',
         alertType: 'warning'
     },
     {
@@ -167,7 +167,7 @@ export const cityEntropyValueToClass: Array<TEntropyClass> = [
         maxValue: Infinity,
         class: 'V',
         subClass: '',
-        desc: 'Очень низкий уровень организованности',
+        desc: 'Очень низкий',
         alertType: 'warning'
     },
 ]
