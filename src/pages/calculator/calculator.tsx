@@ -94,7 +94,7 @@ export const Calculator = ({ systemType }: TProps) => {
                                   const values = systemType === 'region' ? tyumenRegionDemoValues : tyumenCityDemoValues;
                                   form.setFieldsValue(values)
                                   form.submit();
-                              }}>Демо-пример</Button>
+                              }}>Демо-пример {systemType === 'region' ? 'для Тюменской области' : 'для Тюмени'}</Button>
                           </Form.Item>
                       </div>
                   </Form>

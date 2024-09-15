@@ -1,12 +1,17 @@
-import React, {CSSProperties} from 'react';
-import {BookOutlined, CalculatorOutlined, UserOutlined} from '@ant-design/icons';
-import {MenuProps, Typography} from 'antd';
+import {CSSProperties} from 'react';
+import {BookOutlined, CalculatorOutlined, UserOutlined, BarsOutlined} from '@ant-design/icons';
+import {MenuProps} from 'antd';
 import { Layout, Menu } from 'antd';
 import {Link, Outlet} from 'react-router-dom';
 
 const { Header, Content, Footer } = Layout;
 
 const menuItems: MenuProps['items'] = [
+    {
+        label: <Link to={'/'}>Главная</Link>,
+        key: 'main',
+        icon: <BarsOutlined/>
+    },
     {
         label: 'Калькулятор',
         icon: <CalculatorOutlined/>,
@@ -56,9 +61,6 @@ export const MainLayout: React.FC = () => {
 
     const headerStyle: CSSProperties = {
         backgroundColor: 'white',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center'
     };
 
     const contentStyle: CSSProperties = {
@@ -72,16 +74,10 @@ export const MainLayout: React.FC = () => {
     return (
         <Layout style={layoutStyle}>
             <Header style={headerStyle}>
-                <Link to={'/'}>
-                    <Typography.Title level={5} style={{marginBottom: 0}}>Методика оценки степени организованности систем обеспечения БДД</Typography.Title>
-                </Link>
                 <Menu
                     theme="light"
                     mode="horizontal"
                     items={menuItems}
-                    onClick={(data) => {
-                        console.log(data)
-                    }}
                 />
             </Header>
             <Content style={contentStyle}>
