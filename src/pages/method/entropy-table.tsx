@@ -147,7 +147,7 @@ type TProps = {
 
 export const EntropyTable = ({data}: TProps) => {
     const {
-        token: { colorSuccessBg, colorSuccessBgHover, colorSuccessText, colorSuccessTextActive, colorWarningBg, colorWarningBgHover, colorWarningText, colorInfoBg, colorInfoText, colorErrorBg, colorErrorText },
+        token: { colorSuccessBg, colorSuccessBgHover, colorSuccessText, colorSuccessTextActive, colorWarningBg, colorWarningText, colorInfoBg, colorInfoText, colorErrorBg, colorErrorText },
     } = theme.useToken();
 
   return (
