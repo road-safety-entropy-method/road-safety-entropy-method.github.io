@@ -14,7 +14,7 @@ export const MethodRegion = () => {
   return (
       <MathJaxContext config={{loader: { load: ["input/asciimath"] }}}>
           <Typography.Title level={1}>
-              Методика оценки степени организованности систем обеспечения БДД для региона 🏙
+              Методика оценки степени организованности систем обеспечения БДД для субъекта Российской Федерации 🏙
           </Typography.Title>
     <Space  direction="vertical" size="middle" >
         <Card>
@@ -27,7 +27,9 @@ export const MethodRegion = () => {
                 <p style={methodPStyle}>Для региональных систем обеспечения БДД используется 4-х-звенный механизм
                     информационной
                     передачи</p>
-                <p style={methodPStyle}>ТУТ НАДО ВСТАВИТЬ КАРТИНКУ</p>
+                <div style={{display: 'flex', justifyContent: 'center'}}>
+                    <img src={"/region-scheme.png"} style={{width: '800px'}}/>
+                </div>
             </div>
         </Card>
         <Card>
@@ -91,7 +93,7 @@ export const MethodRegion = () => {
                     это можно сделать согласно:
                 </p>
                 <p style={methodPCenterStyle}>
-                    <MathJax>{"`Q = Q_N + Q_{RA} + Q_{V} + Q_{D} = ln(1/K_{N}) + ln(1/K_{RA}) + ln(1/K_{V}) + ln(1/K_{D})`"}</MathJax>
+                    <MathJax>{"`Q = Q_N + Q_{RA} + Q_{V} + Q_{D} = ln(1/K_{N}) + ln(1/K_{RA}) + ln(K_{V}) + ln(1/K_{D})`"}</MathJax>
                 </p>
                 <p style={methodPStyle}>
                     Т.к. <MathJax inline>{"`ln`"}</MathJax> от числа <MathJax inline>{"`X_i > 1`"}</MathJax> принимает

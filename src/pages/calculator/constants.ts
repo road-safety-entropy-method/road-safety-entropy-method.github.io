@@ -31,9 +31,9 @@ export const russia2021Calculations: TCalculations = {
 export const moscow2021Calculations: TCityCalculations = {
     systemType: 'city',
     wVehicles: undefined,
-    wAccidents: 0.6765,
+    wAccidents: 0.677,
     wInjured: 0.015,
-    wDeaths: 0.3085,
+    wDeaths: 0.309,
     entropy: 0.69,
     relativeEntropy: 0.628,
 }

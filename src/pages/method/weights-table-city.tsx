@@ -33,9 +33,9 @@ const cityColumns: TableColumnsType<TCityWeights> = [
 ]
 
 const cityData: Array<TCityWeights> = [{
-    wRA: 0.691,
-    wV: 0.005,
-    wD: 0.304
+    wRA: 0.677,
+    wV: 0.015,
+    wD: 0.309
 }]
 
 export const WeightsTableCity = () => {

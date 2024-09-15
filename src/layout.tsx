@@ -87,9 +87,7 @@ export const MainLayout: React.FC = () => {
             <Content style={contentStyle}>
                 <Outlet/>
             </Content>
-            <Footer style={footerStyle}>
-                тут можно добавить футер с контактными данными например. а можно его вообще убрать.
-            </Footer>
+            <Footer style={footerStyle}/>
         </Layout>
     )
 };

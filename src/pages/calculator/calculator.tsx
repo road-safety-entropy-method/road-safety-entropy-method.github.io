@@ -11,9 +11,10 @@ import {
 } from "antd";
 import {TCalculations, TForm} from "./types";
 import {calculate} from "@/pages/calculator/utils.ts";
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import {EntropyResult, Result} from "@/pages/calculator/result.tsx";
 import {tyumenCityDemoValues, tyumenRegionDemoValues} from "@/pages/calculator/constants.ts";
+import {MathJax, MathJaxContext} from "better-react-mathjax";
 
 const requiredRule: FormRule = {required: true, message: 'Заполните поле'};
 
@@ -35,16 +36,32 @@ export const Calculator = ({ systemType }: TProps) => {
       setCurrentCalculations(calculations);
   }
 
+  const title = useMemo(() => {
+      return systemType === 'region' ?
+          <>Калькулятора расчета Относительной энтропии <MathJax inline>{"`H_4`"}</MathJax> региональной системы обеспечения БДД</> :
+          <>Калькулятора расчета Относительной энтропии <MathJax inline>{"`H_3`"}</MathJax> городской системы обеспечения БДД</>
+  }, [systemType]);
+
+  const desc = useMemo(() => {
+      return (
+          <>
+              Используя официальные статистические данные, характеризующие {systemType === 'region' ? 'региональные' : 'городские'} численность населения, численность автопарка и показатели дорожно-транспортной аварийности, можно определить величину <MathJax inline>{systemType === 'region' ? "`H_4`" : "`H_3`"}</MathJax> БДД
+          </>
+      )
+  }, [systemType])
+
   return (
-      <>
+      <MathJaxContext config={{loader: { load: ["input/asciimath"] }}}>
+          <div style={{display: 'flex', justifyContent: 'center'}}>
+              <Typography.Title level={1} style={{marginBottom: '40px', textAlign: 'center', maxWidth: '1000px'}}>
+                  {title}
+              </Typography.Title>
+          </div>
       <Row gutter={40} >
           <Col span={10}>
               <div style={{marginBottom: '24px'}}>
-                  <Typography.Title level={1} style={{marginBottom: '8px'}}>
-                      Калькулятор для {systemType === 'region' ? 'региона' : 'города'}
-                  </Typography.Title>
                   <Typography style={{fontSize: '18px', padding: '8px 0'}}>
-                      Тут будет описание, что делает этот калькулятор. Его надо нормально написать. Оно не должно быть слишком длинным. Подробности можно сделать в виде ссылки на методику. Можно также здесь написать, что есть демо-кнопка, которая позволяет подставить реальные данные по Тюменской области и Тюмени и посмотреть результаты для них.
+                      {desc}
                   </Typography>
               </div>
               <Card>
@@ -52,20 +69,20 @@ export const Calculator = ({ systemType }: TProps) => {
                       <Form.Item hidden name={'systemType'}>
                           <Input value={systemType}/>
                       </Form.Item>
-                      <Form.Item label={"Количество людей"} rules={[requiredRule]} name={"population"}>
+                      <Form.Item label={systemType === 'region' ? "Население региона" : "Население города"} rules={[requiredRule]} name={"population"}>
                           <InputNumber placeholder="0" style={{width: '100%'}} min={1} precision={0}/>
                       </Form.Item>
                       {systemType === 'region' &&
-                          <Form.Item label={"Количество транспортных средств"} rules={[requiredRule]} name={"vehicles"}>
+                          <Form.Item label={"Численность автопарка"} rules={[requiredRule]} name={"vehicles"}>
                               <InputNumber placeholder="0" style={{width: '100%'}} min={1} precision={0}/>
                           </Form.Item>}
-                      <Form.Item label={"Количество ДТП"} rules={[requiredRule]} name={"accidents"}>
+                      <Form.Item label={"Годовое число ДТП"} rules={[requiredRule]} name={"accidents"}>
                           <InputNumber placeholder="0" style={{width: '100%'}} min={1} precision={0}/>
                       </Form.Item>
-                      <Form.Item label={"Количество пострадавших"} rules={[requiredRule]} name={"injured"}>
+                      <Form.Item label={"Число пострадавших в ДТП за год"} rules={[requiredRule]} name={"injured"}>
                           <InputNumber placeholder="0" style={{width: '100%'}} min={1} precision={0}/>
                       </Form.Item>
-                      <Form.Item label={"Количество погибших"} rules={[requiredRule]} name={"deaths"}>
+                      <Form.Item label={"Число погибших в ДТП за год"} rules={[requiredRule]} name={"deaths"}>
                           <InputNumber placeholder="0" style={{width: '100%'}} min={1} precision={0}/>
                       </Form.Item>
                       <div style={{display: 'flex', gap: '24px'}}>
@@ -119,6 +136,6 @@ export const Calculator = ({ systemType }: TProps) => {
               }
         </Col>
       </Row>
-    </>
+      </MathJaxContext>
   );
 };

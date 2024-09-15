@@ -3,7 +3,7 @@ import {Button, Card, Typography} from "antd";
 
 type TOptionCardProps = {
     title: string;
-    desc: string;
+    desc?: string;
     btnCalc: string;
     btnCalcLink: string;
     btnMethod: string;
@@ -23,10 +23,10 @@ export const OptionCard = ({
     return (
         <Card>
             <div style={{display: 'flex', flexDirection: 'column'}}>
-                <Typography.Title level={3}>
+                <Typography.Title level={3} style={{marginBottom: '36px'}}>
                     {title}
                 </Typography.Title>
-                <p style={{ fontSize: '16px', marginBottom: '24px'}}>{desc}</p>
+                {desc && <p style={{ fontSize: '16px', marginBottom: '24px'}}>{desc}</p>}
                 <Button type={"primary"} size={'large'} style={{marginBottom: '16px'}} onClick={() => navigate(btnCalcLink)}>{btnCalc}</Button>
                 <Button size={'large'} onClick={() => navigate(btnMethodLink)}>{btnMethod}</Button>
             </div>
