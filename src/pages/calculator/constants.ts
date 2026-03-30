@@ -2,20 +2,20 @@ import {TCalculations, TCityCalculations, TEntropyClass, TForm} from "@/pages/ca
 
 export const tyumenRegionDemoValues: TForm = {
     systemType: 'region',
-    population: 1552148,
-    vehicles: 721286,
-    accidents: 2462,
-    injured: 3570,
-    deaths: 184
+    population: 1677339,
+    vehicles: 682806,
+    accidents: 2699,
+    injured: 3714,
+    deaths: 171
 }
 
 export const tyumenCityDemoValues: TForm = {
     systemType: 'city',
-    population: 847488,
+    population: 872077,
     vehicles: undefined,
-    accidents: 1452,
-    injured: 2027,
-    deaths: 51
+    accidents: 1577,
+    injured: 2015,
+    deaths: 43
 }
 
 export const russia2021Calculations: TCalculations = {
@@ -28,12 +28,32 @@ export const russia2021Calculations: TCalculations = {
     relativeEntropy: 0.699,
 }
 
+export const russia2025Calculations: TCalculations = {
+    systemType: 'region',
+    wVehicles: 0.084,
+    wAccidents: 0.630,
+    wInjured: 0.030,
+    wDeaths: 0.256,
+    entropy: 0.969,
+    relativeEntropy: 0.699,
+}
+
 export const moscow2021Calculations: TCityCalculations = {
     systemType: 'city',
     wVehicles: undefined,
     wAccidents: 0.677,
     wInjured: 0.015,
     wDeaths: 0.309,
+    entropy: 0.69,
+    relativeEntropy: 0.628,
+}
+
+export const moscow2025Calculations: TCityCalculations = {
+    systemType: 'city',
+    wVehicles: undefined,
+    wAccidents: 0.673,
+    wInjured: 0.013,
+    wDeaths: 0.315,
     entropy: 0.69,
     relativeEntropy: 0.628,
 }

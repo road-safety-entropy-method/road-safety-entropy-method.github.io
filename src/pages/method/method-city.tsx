@@ -166,16 +166,16 @@ export const MethodCity = () => {
                     </Header>
                     <div style={methodDivStyle}>
                         <p style={methodPStyle}>
-                            Энтропийная классификация систем обеспечения БДД городов-региональных центров РФ по уровням системной организованности (2021). Система оценок <MathJax inline>{"`H_3`"}</MathJax>
+                            Энтропийная классификация систем обеспечения БДД городов-региональных центров РФ по уровням системной организованности (2025). Система оценок <MathJax inline>{"`H_3`"}</MathJax>
                         </p>
                         <EntropyTable data={{
-                            highest: '< 0,580',
-                            highOne: '0,581…0,600',
-                            highTwo: '0,601…0,620',
-                            mediumOne: '0,621…0,640',
-                            mediumTwo: '0,641…0,660',
-                            lowOne: '0,661…0,680',
-                            lowTwo: '0,681…0,700',
+                            highest: '< 0,550',
+                            highOne: '0,551…0,575',
+                            highTwo: '0,576…0,600',
+                            mediumOne: '0,601…0,625',
+                            mediumTwo: '0,626…0,650',
+                            lowOne: '0,651…0,675',
+                            lowTwo: '0,676…0,700',
                             lowest: '> 0.701'
                         }}/>
                     </div>
@@ -191,7 +191,7 @@ export const MethodCity = () => {
                             причинно-следственной цепочки с общероссийскими значениями <MathJax inline>{"`w_i`"}</MathJax>.
                         </p>
                         <p style={methodPStyle}>
-                            Базовые, принятые за стандарт значения «весов» <MathJax inline>{"`w_i`"}</MathJax> звеньев причинно-следственной цепочки (2021) для городов РФ. Система оценок <MathJax inline>{"`H_3`"}</MathJax>
+                            Базовые, принятые за стандарт значения «весов» <MathJax inline>{"`w_i`"}</MathJax> звеньев причинно-следственной цепочки (2025) для городов РФ. Система оценок <MathJax inline>{"`H_3`"}</MathJax>
                         </p>
                         <WeightsTableCity/>
                     </div>

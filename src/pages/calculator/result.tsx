@@ -3,9 +3,9 @@ import { ReactNode, useMemo} from "react";
 import {TCalculationKey, TSystemType} from "@/pages/calculator/types.ts";
 import {
     cityEntropyValueToClass,
-    moscow2021Calculations,
+    moscow2025Calculations,
     regionEntropyValueToClass,
-    russia2021Calculations
+    russia2025Calculations
 } from "@/pages/calculator/constants.ts";
 import {AlertProps} from "antd/es/alert/Alert";
 import { useNavigate } from "react-router-dom";
@@ -50,7 +50,7 @@ type TProps = {
 }
 
 export const Result = ({ systemType, calculationKey, calculatedValue }: TProps) => {
-    const standardValue = systemType === 'region' ? russia2021Calculations[calculationKey] : moscow2021Calculations[calculationKey];
+    const standardValue = systemType === 'region' ? russia2025Calculations[calculationKey] : moscow2025Calculations[calculationKey];
 
     const stateType = useMemo(() => {
         // @ts-expect-error ---

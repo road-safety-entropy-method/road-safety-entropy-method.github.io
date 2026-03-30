@@ -39,10 +39,10 @@ const regionColumns: TableColumnsType<TRegionWeights> = [
 ]
 
 const regionData: Array<TRegionWeights> = [{
-    wN: 0.09,
-    wRA: 0.623,
-    wV: 0.032,
-    wD: 0.255
+    wN: 0.084,
+    wRA: 0.630,
+    wV: 0.030,
+    wD: 0.256
 }]
 
 export const WeightsTableRegion = () => {

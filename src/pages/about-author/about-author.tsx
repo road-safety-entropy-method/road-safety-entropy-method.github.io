@@ -48,13 +48,13 @@ export const AboutAuthor = () => {
                         </div>
                         <Flex gap={'24px'}>
                             <Card>
-                            <Statistic title={'Общее количество статей'} value={'> 300'} valueStyle={{color: colorPrimaryTextActive}}/>
+                            <Statistic title={'Общее количество статей'} value={'> 380'} valueStyle={{color: colorPrimaryTextActive}}/>
                             </Card>
                             <Card>
-                            <Statistic title={'Количество статей в изданиях, рецензируемых ВАК РФ'} value={'60'} valueStyle={{color: colorPrimaryTextActive}}/>
+                            <Statistic title={'Количество статей в изданиях, рецензируемых ВАК РФ'} value={'68'} valueStyle={{color: colorPrimaryTextActive}}/>
                             </Card>
                             <Card>
-                                <Statistic title={'Количество статей в изданиях базы данных Scopus'} value={'31'} valueStyle={{color: colorPrimaryTextActive}}/>
+                                <Statistic title={'Количество статей в изданиях базы данных Scopus'} value={'55'} valueStyle={{color: colorPrimaryTextActive}}/>
                             </Card>
                         </Flex>
                     </div>

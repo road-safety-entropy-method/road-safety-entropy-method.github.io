@@ -38,14 +38,14 @@ export const Calculator = ({ systemType }: TProps) => {
 
   const title = useMemo(() => {
       return systemType === 'region' ?
-          <>Калькулятора расчета Относительной энтропии <MathJax inline>{"`H_4`"}</MathJax> региональной системы обеспечения БДД</> :
-          <>Калькулятора расчета Относительной энтропии <MathJax inline>{"`H_3`"}</MathJax> городской системы обеспечения БДД</>
+          <>Пример расчета Относительной энтропии <MathJax inline>{"`H_{n-4}`"}</MathJax> региональной системы обеспечения БДД</> :
+          <>Пример расчета Относительной энтропии <MathJax inline>{"`H_{n-3}`"}</MathJax> городской системы обеспечения БДД</>
   }, [systemType]);
 
   const desc = useMemo(() => {
       return (
           <>
-              Используя официальные статистические данные, характеризующие {systemType === 'region' ? 'региональные' : 'городские'} численность населения, численность автопарка и показатели дорожно-транспортной аварийности, можно определить величину <MathJax inline>{systemType === 'region' ? "`H_4`" : "`H_3`"}</MathJax> БДД
+              Используя официальные статистические данные, характеризующие {systemType === 'region' ? 'региональные' : 'городские'} численность населения, численность автопарка и показатели дорожно-транспортной аварийности, можно определить величину <MathJax inline>{systemType === 'region' ? "`H_{n-4}`" : "`H_{n-3}`"}</MathJax> БДД
           </>
       )
   }, [systemType])
@@ -94,7 +94,7 @@ export const Calculator = ({ systemType }: TProps) => {
                                   const values = systemType === 'region' ? tyumenRegionDemoValues : tyumenCityDemoValues;
                                   form.setFieldsValue(values)
                                   form.submit();
-                              }}>Демо-пример {systemType === 'region' ? 'для Тюменской области' : 'для Тюмени'}</Button>
+                              }}>Демо-пример {systemType === 'region' ? 'для Тюменской области' : 'для Тюмени'} (2025)</Button>
                           </Form.Item>
                       </div>
                   </Form>
