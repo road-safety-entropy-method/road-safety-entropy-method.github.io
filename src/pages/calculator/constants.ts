@@ -61,62 +61,62 @@ export const moscow2025Calculations: TCityCalculations = {
 export const regionEntropyValueToClass: Array<TEntropyClass> = [
     {
         minValue: -Infinity,
-        maxValue: 0.651,
+        maxValue: 0.641,
         class: 'I',
         subClass: '',
         desc: 'Очень высокий',
         alertType: 'success'
     },
     {
-        minValue: 0.651,
-        maxValue: 0.676,
+        minValue: 0.641,
+        maxValue: 0.661,
         class: 'II',
         subClass: 'II-1',
         desc: 'Высокий',
         alertType: 'success'
     },
     {
-        minValue: 0.676,
-        maxValue: 0.701,
+        minValue: 0.661,
+        maxValue: 0.681,
         class: 'II',
         subClass: 'II-2',
         desc: 'Высокий',
         alertType: 'success'
     },
     {
-        minValue: 0.701,
-        maxValue: 0.726,
+        minValue: 0.681,
+        maxValue: 0.701,
         class: 'III',
         subClass: 'III-1',
         desc: 'Средний',
         alertType: 'info'
     },
     {
-        minValue: 0.726,
-        maxValue: 0.751,
+        minValue: 0.701,
+        maxValue: 0.721,
         class: 'III',
         subClass: 'III-2',
         desc: 'Средний',
         alertType: 'info'
     },
     {
-        minValue: 0.751,
-        maxValue: 0.776,
+        minValue: 0.721,
+        maxValue: 0.741,
         class: 'IV',
         subClass: 'IV-1',
         desc: 'Низкий',
         alertType: 'warning'
     },
     {
-        minValue: 0.776,
-        maxValue: 0.801,
+        minValue: 0.741,
+        maxValue: 0.761,
         class: 'IV',
         subClass: 'IV-2',
         desc: 'Низкий',
         alertType: 'warning'
     },
     {
-        minValue: 0.801,
+        minValue: 0.761,
         maxValue: Infinity,
         class: 'V',
         subClass: '',
@@ -128,54 +128,54 @@ export const regionEntropyValueToClass: Array<TEntropyClass> = [
 export const cityEntropyValueToClass: Array<TEntropyClass> = [
     {
         minValue: -Infinity,
-        maxValue: 0.581,
+        maxValue: 0.551,
         class: 'I',
         subClass: '',
         desc: 'Очень высокий',
         alertType: 'success'
     },
     {
-        minValue: 0.581,
-        maxValue: 0.601,
+        minValue: 0.551,
+        maxValue: 0.576,
         class: 'II',
         subClass: 'II-1',
         desc: 'Высокий',
         alertType: 'success'
     },
     {
-        minValue: 0.601,
-        maxValue: 0.621,
+        minValue: 0.576,
+        maxValue: 0.601,
         class: 'II',
         subClass: 'II-2',
         desc: 'Высокий',
         alertType: 'success'
     },
     {
-        minValue: 0.621,
-        maxValue: 0.641,
+        minValue: 0.601,
+        maxValue: 0.626,
         class: 'III',
         subClass: 'III-1',
         desc: 'Средний',
         alertType: 'info'
     },
     {
-        minValue: 0.641,
-        maxValue: 0.661,
+        minValue: 0.626,
+        maxValue: 0.651,
         class: 'III',
         subClass: 'III-2',
         desc: 'Средний',
         alertType: 'info'
     },
     {
-        minValue: 0.661,
-        maxValue: 0.681,
+        minValue: 0.651,
+        maxValue: 0.676,
         class: 'IV',
         subClass: 'IV-1',
         desc: 'Низкий',
         alertType: 'warning'
     },
     {
-        minValue: 0.681,
+        minValue: 0.676,
         maxValue: 0.701,
         class: 'IV',
         subClass: 'IV-2',
